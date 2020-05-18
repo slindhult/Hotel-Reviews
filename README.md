@@ -47,7 +47,7 @@ The next step was to use sentiment analysis of the reviews, I compared the vader
 
 
 Below is a visualization of how the models performed on the datasets:
-![Image of Model Performance]()
+![Image of Model Performance](https://github.com/slindhult/Hotel-Reviews/blob/master/images/model-comparison.png?raw=true)
 
 
 The best model performance was achieved with XGBoost on the dataset with vaderanalysis and CountVectorizer of the top 300 words, achieving a mean absolute error of 0.77 stars.
