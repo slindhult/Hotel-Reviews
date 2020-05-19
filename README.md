@@ -42,6 +42,7 @@ To understand the most significant words, words for positive and negative review
   <img src="https://github.com/slindhult/Hotel-Reviews/blob/master/images/negwords.jpg?raw=true" width="425" /> 
 </p>
 
+### Modeling
 I wanted to create a model that would predict the user's review score based on their positive and negative reviews.  To set a base line I took the mean absolute error of predicting the hotel's average rating every time, this gave a baseline of 1.18 stars.
 The next step was to use sentiment analysis of the reviews, I compared the vader sentiment analysis library from NLTK and the TextBlob sentiment analysis.  Vader performed slightly better so I stuck with that.  Next stopwords were removed and the top 300 words from each type of review were added as features to the dataset using CountVectorizer.  The vader sentiment lexicon (positive and negative association for certain words ranging from -4 to 4) was slightly adjusted to better fit the hotel dataset.
 
