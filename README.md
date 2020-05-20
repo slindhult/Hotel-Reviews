@@ -38,8 +38,8 @@ To understand the most significant words, counts of words in positive and negati
 
 
 <p float="middle">
-  <img src="https://github.com/slindhult/Hotel-Reviews/blob/master/images/poswords.jpg?raw=true" width='425' />
-  <img src="https://github.com/slindhult/Hotel-Reviews/blob/master/images/negwords.jpg?raw=true" width="425" /> 
+  <img src="https://github.com/slindhult/Hotel-Reviews/blob/master/images/poswords.png?raw=true" width='415' />
+  <img src="https://github.com/slindhult/Hotel-Reviews/blob/master/images/negwords.png?raw=true" width="415" /> 
 </p>
 
 ### Modeling
@@ -47,7 +47,7 @@ The goal was to create a model to predict the user's review score based on their
 The next step was to use sentiment analysis on the reviews.  Both Vader sentiment analysis from NLTK and TextBlob sentiment analysis were run on the data set for comparison.  Vader performed slightly better and was used moving forward.  Next stopwords were removed and the top 300 words from each type of review were added as features to the dataset as a term frequency matrix.  The vader sentiment lexicon was originally trained on social media data, to better tailor it to the hotel dataset some of the most frequently occuring words were added to the lexicon to more accurately predict sentiment.
 
 
-Below is a visualization of how the models performed on the datasets:
+Below is a visualization of how each model performed on the various datasets:
 ![Image of Model Performance](https://github.com/slindhult/Hotel-Reviews/blob/master/images/model-comparison.png?raw=true)
 
 
