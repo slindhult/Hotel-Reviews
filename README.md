@@ -4,7 +4,7 @@
 ### **Data:**
 <hr />
 The dataset contained 515,000 Hotel Reviews pulled from Booking.com.  The reviews were rated on a 1-10 scale and drawn from 5 major European cities: Amsterdam, Barcelona, London, Paris and Vienna. The dataset included a positive and negative review column, as well as average hotel rating, number of reviews, reviewer nationality and basic information on their stay.  The goal of this project was to build a model to predict the reviewer score based on the data available and the sentiment analysis of their review.
-The dataset used was retrieved from [kaggle](https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe)
+The dataset used was retrieved from: [Kaggle](https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe)
 
 
 A quick description of the dataset shows that the mean is 8.39 and the standard deviation is 1.63, this means all reviews above the mean are within one standard deviation and those towards the lower end (minimum rating of 2.5) are further away.
@@ -19,6 +19,7 @@ A quick description of the dataset shows that the mean is 8.39 and the standard 
 ### Mapping
 <hr />
 To better visualize the hotel locations and ratings,  an interactive map was created plotting the hotels using their latitude, longitude and star ratings broken out by quartile.  Below is snapshot of central Paris:
+
 ![Paris Hotel Map](https://github.com/slindhult/Hotel-Reviews/blob/master/images/paris.png?raw=true)
 
 
