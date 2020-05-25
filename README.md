@@ -1,6 +1,8 @@
 ## Predicting Hotel Ratings from Hotel Reviews
-![Image of Emissions](https://cache.marriott.com/marriottassets/destinations/hero/europe-destination.jpg?interpolation=progressive-bilinear)
+![Header Image](https://cache.marriott.com/marriottassets/destinations/hero/europe-destination.jpg?interpolation=progressive-bilinear)
+
 ### **Data:**
+<hr />
 The dataset contained 515,000 Hotel Reviews pulled from Booking.com.  The reviews were rated on a 1-10 scale and drawn from 5 major European cities: Amsterdam, Barcelona, London, Paris and Vienna. The dataset included a positive and negative review column, as well as average hotel rating, number of reviews, reviewer nationality and basic information on their stay.  The goal of this project was to build a model to predict the reviewer score based on the data available and the sentiment analysis of their review.
 The dataset used was retrieved from [kaggle](https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe)
 
@@ -10,16 +12,18 @@ A quick description of the dataset shows that the mean is 8.39 and the standard 
 ![Image of dataset description](https://github.com/slindhult/Hotel-Reviews/blob/master/images/Screenshot%20from%202020-05-15%2008-24-53.png?raw=true)
 
 
-![Image of Emissions](https://github.com/slindhult/Hotel-Reviews/blob/master/images/%20hist.png?raw=true)
+![Distribution of Reviews](https://github.com/slindhult/Hotel-Reviews/blob/master/images/%20hist.png?raw=true)
 
 
 
 ### Mapping
+<hr />
 To better visualize the hotel locations and ratings,  an interactive map was created plotting the hotels using their latitude, longitude and star ratings broken out by quartile.  Below is snapshot of central Paris:
 ![Paris Hotel Map](https://github.com/slindhult/Hotel-Reviews/blob/master/images/paris.png?raw=true)
 
 
 ### **Cleaning and Feature Engineering:**
+<hr />
 Datapoints without any reviews were dropped, as the focus was on natural language processing.  The tags column contained many unique room descriptions, so feature engineering was completed to categorize rooms as either budget, medium, high, or fancy.  This allowed the data to be used and greatly reduce the number of features that would have been required.  Additional information about their travel was also included: number of nights stayed, couple, family, solo, and if they were traveling for business.  Vader Sentiment Analysis and TextBlob sentiment analysis were used to generate reviewer sentiment scores for both positive and negative reviews.  Stopwords were removed and keywords were lemmatized prior to adding a count vectorizer matrix based on the top 300 words from both positive and negative reviews.
 
 
@@ -43,15 +47,16 @@ To understand the most significant words, counts of words in positive and negati
 </p>
 
 ### Modeling
+<hr />
 The goal was to create a model to predict the user's review score based on their positive and negative reviews.  To create a baseline to measure my models against, the hotel's average rating was predicted for each datapoint and the mean absolute error was taken on the results. This gave a baseline to beat of 1.18 stars.
 The next step was to use sentiment analysis on the reviews.  Both Vader sentiment analysis from NLTK and TextBlob sentiment analysis were run on the data set for comparison.  Vader performed slightly better and was used moving forward.  Next stopwords were removed and the top 300 words from each type of review were added as features to the dataset as a term frequency matrix.  The vader sentiment lexicon was originally trained on social media data, to better tailor it to the hotel dataset some of the most frequently occuring words were added to the lexicon to more accurately predict sentiment.
 
 
 Below is a visualization of how each model performed on the various datasets:
-![Image of Model Performance](https://github.com/slindhult/Hotel-Reviews/blob/master/images/model-comparison.png?raw=true)
+![Image of Model Performance](https://github.com/slindhult/Hotel-Reviews/blob/master/images/modelcomparison.png?raw=true)
 
 
-The best performing model was  XGBoost run on the vaderanalysis dataset with term frequency matrix of the top 300 words, achieving a mean absolute error of 0.77 stars. The top 15 feature importances (_neg indicates that it is from the countvectorizer of the negative reviews) were pulled from the best model:
+The best performance was from a gradient booosted model run on the vaderanalysis dataset with term frequency matrix of the top 300 words, achieving a mean absolute error of 0.77 stars.  The model was tuned using randomsearch to find the best parameters given the run time for each iteration. The top 15 feature importances (_neg indicates that it is from the countvectorizer of the negative reviews) were pulled from the best model:
 1) room_neg, 3.213848362698663
 2) new_neg_sent, 1.3588873831895074
 3) new_pos_sent, 1.197688207777768
@@ -71,5 +76,6 @@ The best performing model was  XGBoost run on the vaderanalysis dataset with ter
 Many of the top features come from the negative review list.  This is likely because many of the ratings are grouped around the mean at 8.4, and the model needs to account for the lower scores.
 
 ### Next Steps
+<hr />
 * The term frequency matrix size was limited on my local machine, given the opportunity adding terms may yield better results.
 * Testing the model on data from other booking websites or regions to gauge the generalizability would be interesting.
