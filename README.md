@@ -1,8 +1,18 @@
 ## Predicting Hotel Ratings from Hotel Reviews
 ![Header Image](https://cache.marriott.com/marriottassets/destinations/hero/europe-destination.jpg?interpolation=progressive-bilinear)
 
-### **Data:**
-<hr />
+### Table of Contents
+<ul>
+<li><a href="https://github.com/slindhult/Hotel-Reviews/#Hotel-Review-Data">Data Exploration</a></li>
+<li><a href="https://github.com/slindhult/Hotel-Reviews/#Mapping">Geographical Data Visualization,</a></li>
+<li><a href="https://github.com/slindhult/Hotel-Reviews/#Cleaning-and-Feature-Engineering">Cleaning</a>,</li>
+<li><a href="https://github.com/slindhult/Hotel-Reviews/#Modeling">Modeling</a></li>
+<li><a href="https://github.com/slindhult/Hotel-Reviews/#Next-Steps">Next Steps</a></li>
+</ul>
+
+
+### **Hotel Review Data:**
+<hr/>
 The dataset contained 515,000 Hotel Reviews pulled from Booking.com.  The reviews were rated on a 1-10 scale and drawn from 5 major European cities: Amsterdam, Barcelona, London, Paris and Vienna. The dataset included a positive and negative review column, as well as average hotel rating, number of reviews, reviewer nationality and basic information on their stay.  The goal of this project was to build a model to predict the reviewer score based on the data available and the sentiment analysis of their review.
 The dataset used was retrieved from: 
 
@@ -87,5 +97,6 @@ Many of the top features come from the negative review list.  This is likely bec
 
 ### Next Steps
 <hr />
+
 * The term frequency matrix size was limited on my local machine, given the opportunity adding terms may yield better results.
 * Testing the model on data from other booking websites or regions to gauge the generalizability would be interesting.
