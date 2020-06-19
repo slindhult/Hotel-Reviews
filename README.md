@@ -5,7 +5,7 @@
 <ul>
 <li><a href="https://github.com/slindhult/Hotel-Reviews/#Hotel-Review-Data">Data Exploration</a></li>
 <li><a href="https://github.com/slindhult/Hotel-Reviews/#Mapping">Geographical Data Visualization,</a></li>
-<li><a href="https://github.com/slindhult/Hotel-Reviews/#Cleaning-and-Feature-Engineering">Cleaning</a>,</li>
+<li><a href="https://github.com/slindhult/Hotel-Reviews/#Cleaning-and-Feature-Engineering">Cleaning</a></li>
 <li><a href="https://github.com/slindhult/Hotel-Reviews/#Modeling">Modeling</a></li>
 <li><a href="https://github.com/slindhult/Hotel-Reviews/#Next-Steps">Next Steps</a></li>
 </ul>
